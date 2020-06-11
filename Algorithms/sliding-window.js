@@ -30,14 +30,15 @@ function getLongestStr (str) {
             myObj[els] = 1;
             theEl.push(els);
         }else {
-            if (theEl.length > length) length = theEl.length;
             delete myObj[els];
             let index = theEl.indexOf(els);
             theEl = theEl.slice(index + 1);
             theEl.push(els);            
             myObj[els] = 1;
         }
+        if (theEl.length > length) length = theEl.length;
     }
     console.log(length);
 }
-getLongestStr('GEEKSFORGEEKS');
+// getLongestStr('dvdf');
+
