@@ -1,4 +1,4 @@
-function tst (arr, n) {
+function getBiggestSum (arr, n) {
     let biggest = null;
     if (arr.length < n) {
         console.log(biggest);
@@ -19,4 +19,25 @@ function tst (arr, n) {
     console.log(biggest);
     
 }
-tst([1,2,3,4,5,6,7,8,9], 4)
+// getBiggestSum([1,2,3,4,5,6,7,8,9], 4)
+
+function getLongestStr (str) {
+    let myObj = {};
+    let theEl = [];
+    let length = 0;
+    for (let els of str.split('')) {
+        if (!myObj[els]) {
+            myObj[els] = 1;
+            theEl.push(els);
+        }else {
+            if (theEl.length > length) length = theEl.length;
+            delete myObj[els];
+            let index = theEl.indexOf(els);
+            theEl = theEl.slice(index + 1);
+            theEl.push(els);            
+            myObj[els] = 1;
+        }
+    }
+    console.log(length);
+}
+getLongestStr('GEEKSFORGEEKS');
