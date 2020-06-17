@@ -14,4 +14,11 @@ function productOfArray (arr) {
     inner(arr);
     console.log(product);
 }
-productOfArray([5,4,3,2,1]);
+// productOfArray([6, 2]);
+
+function reverse(str){
+    if (str.length === 1) return str;   
+    return reverse(str.slice(1)) + str [0];
+}
+
+reverse('hello');
