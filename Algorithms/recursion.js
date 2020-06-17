@@ -20,5 +20,14 @@ function reverse(str){
     if (str.length === 1) return str;   
     return reverse(str.slice(1)) + str [0];
 }
+// reverse('hello');
 
-reverse('hello');
+function isPalindrome (str) {
+    if (str.length === 1) return true;
+    if (str[0] !== str[str.length-1]) return false;
+    
+    isPalindrome(str.slice(1, str.length-1));
+    
+}
+
+console.log(isPalindrome('racedcar'));
