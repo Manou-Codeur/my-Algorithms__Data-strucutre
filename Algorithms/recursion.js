@@ -29,17 +29,19 @@ function isPalindrome (str) {
 }
 // console.log(isPalindrome('racecar'));
 
-const final = [];
 function flatten(oldArr){
-    if (typeof oldArr !== 'object') final.push(oldArr);
-    for (let els of oldArr) {
-        if (typeof els === "object") {
-            flatten(els);
-        }else {
-            final.push(els);
+    const final = [];
+    function tst (param) {
+        if (typeof param !== 'object') final.push(param);
+        for (let els of param) {
+            if (typeof els === "object") {
+                tst(els);
+            }else {
+                final.push(els);
+            }
         }
-        
     }
+    tst(oldArr);
     console.log(final);
 }
 flatten([[[3],[4],[5]],[9],[9],[8],[[1,2,3]]]); 
