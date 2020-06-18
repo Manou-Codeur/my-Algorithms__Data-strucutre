@@ -40,7 +40,19 @@ function flatten(oldArr){
     inner(oldArr);
     console.log(final);
 }
-flatten([[3,4,5],[[9,9,9]],["a,b,c"]]); 
+// flatten([[3,4,5],[[9,9,9]],["a,b,c"]]); 
+let tst = [];
+function capitalizeWords (array) {
+    if (array.length === 1) {
+        tst.push(array[0].toUpperCase());
+        return;
+    }
+    tst.push(array[0].toUpperCase());
+    capitalizeWords(array.slice(1)); 
+}
 
+capitalizeWords(["hello", "world", "good"]);
+
+console.log(tst);
 
 
