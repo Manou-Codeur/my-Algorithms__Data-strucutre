@@ -31,13 +31,16 @@ function isPalindrome (str) {
 
 function flatten(oldArr){
     const final = [];
-    function tst (param) {
+    function inner (param) {
         for (let els of param) {
-            if (typeof els === "object") tst(els);
+            if (Array.isArray(els)) inner(els);
             else final.push(els);
         }
     }
-    tst(oldArr);
+    inner(oldArr);
     console.log(final);
 }
 flatten([[3,4,5],[[9,9,9]],["a,b,c"]]); 
+
+
+
