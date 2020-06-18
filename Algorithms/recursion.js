@@ -27,5 +27,21 @@ function isPalindrome (str) {
     if (str[0] !== str[str.length-1]) return false;
     return isPalindrome(str.slice(1, str.length-1));   
 }
+// console.log(isPalindrome('racecar'));
 
-console.log(isPalindrome('racecar'));
+const final = [];
+function flatten(oldArr){
+    if (typeof oldArr !== 'object') final.push(oldArr);
+    for (let els of oldArr) {
+        if (typeof els === "object") {
+            flatten(els);
+        }else {
+            final.push(els);
+        }
+        
+    }
+    console.log(final);
+}
+flatten([[[3],[4],[5]],[9],[9],[8],[[1,2,3]]]); 
+
+//  [ [3],[4],[5] ]
