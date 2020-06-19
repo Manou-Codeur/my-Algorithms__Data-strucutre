@@ -41,18 +41,21 @@ function flatten(oldArr){
     console.log(final);
 }
 // flatten([[3,4,5],[[9,9,9]],["a,b,c"]]); 
-let tst = [];
 function capitalizeWords (array) {
-    if (array.length === 1) {
-        tst.push(array[0].toUpperCase());
-        return;
+    let tst = [];
+    function inner (input) {
+        if (input.length === 1) {
+            tst.push(input[0].toUpperCase());
+            return;
+        }
+        tst.push(input[0].toUpperCase());
+        inner(input.slice(1)); 
     }
-    tst.push(array[0].toUpperCase());
-    capitalizeWords(array.slice(1)); 
+    inner(array)
+    console.log(tst);
 }
 
 capitalizeWords(["hello", "world", "good"]);
 
-console.log(tst);
 
 
