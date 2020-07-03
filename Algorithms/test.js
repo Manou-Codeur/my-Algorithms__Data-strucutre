@@ -114,9 +114,8 @@ function fib(n) {
 
 function test(n) {
   let tst = [1];
-  //till tst length arise n
-  for (let i = 2; i <= 500000; i++) {
-    if (tst.length >= n) break;
+  let i = 2;
+  while (tst.length < n) {
     if (
       tst.indexOf(i / 2) !== -1 ||
       tst.indexOf(i / 3) !== -1 ||
@@ -124,8 +123,9 @@ function test(n) {
     ) {
       tst.push(i);
     }
+    i++;
   }
   console.log(tst[n - 1]);
   console.log(tst);
 }
-test(40);
+test(20);
