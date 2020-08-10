@@ -128,7 +128,7 @@ class LinkdedList {
   }
 }
 
-const linkedListOne = new LinkdedList();
-linkedListOne.push("manou");
-linkedListOne.push("salim");
-linkedListOne.push("khaled");
+// const linkedListOne = new LinkdedList();
+// linkedListOne.push("manou");
+// linkedListOne.push("salim");
+// linkedListOne.push("khaled");
