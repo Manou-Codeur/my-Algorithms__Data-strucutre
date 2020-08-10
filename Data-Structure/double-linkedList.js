@@ -36,7 +36,7 @@ class DoubleLinkedList {
 
   pop() {
     if (!this.head) return undefined;
-    if (this.length === 1) {
+    else if (this.length === 1) {
       this.tail = null;
       this.head = null;
     } else {
