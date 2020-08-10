@@ -25,6 +25,27 @@ class DoubleLinkedList {
     }
     this.length++;
   }
+
+  travers() {
+    let current = this.head;
+    while (current) {
+      console.log(current.val);
+      current = current.next;
+    }
+  }
+
+  pop() {
+    if (!this.head) return undefined;
+    if (this.length === 1) {
+      this.tail = null;
+      this.head = null;
+    } else {
+      let prev = this.tail.prev;
+      prev.next = null;
+      this.tail = prev;
+    }
+    this.length--;
+  }
 }
 
 const dll = new DoubleLinkedList();
