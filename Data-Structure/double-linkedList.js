@@ -15,7 +15,7 @@ class DoubleLinkedList {
 
   push(val) {
     const newNode = new Node2(val);
-    if (!this.tail) {
+    if (!this.head) {
       this.head = newNode;
       this.tail = newNode;
     } else {
@@ -45,6 +45,32 @@ class DoubleLinkedList {
       this.tail = prev;
     }
     this.length--;
+  }
+
+  shift() {
+    if (!this.head) return undefined;
+    else if (this.length === 1) {
+      this.tail = null;
+      this.head = null;
+    } else {
+      let newHead = this.head.next;
+      newHead.prev = null;
+      this.head = newHead;
+    }
+    this.length--;
+  }
+
+  unshift(val) {
+    const newNode = new Node2(val);
+    if (!this.head) {
+      this.head = newNode;
+      this.tail = newNode;
+    } else {
+      this.head.prev = newNode;
+      newNode.next = this.head;
+      this.head = newNode;
+    }
+    this.length++;
   }
 }
 
