@@ -110,7 +110,7 @@ function fib(n) {
   }
   return fibNums[n];
 }
-// console.log(fib(4));
+// console.log(fib(400));
 
 function test(n) {
   let tst = [1];
@@ -128,4 +128,25 @@ function test(n) {
   console.log(tst[n - 1]);
   console.log(tst);
 }
-test(20);
+// test(20);
+
+function sieveOfEratosthenes(n) {
+  let result = [];
+  for (let i = 2; i <= n; i++) {
+    result.push(i);
+  }
+  let j = 2;
+  function inner() {
+    if (j === n - 1) return;
+    for (let i = j + 1; i <= n; i++) {
+      if (i % j === 0) {
+        result.indexOf(i) !== -1 ? result.splice(result.indexOf(i), 1) : null;
+      }
+    }
+    j++;
+    inner();
+  }
+  inner();
+  console.log(result);
+}
+sieveOfEratosthenes(200);
