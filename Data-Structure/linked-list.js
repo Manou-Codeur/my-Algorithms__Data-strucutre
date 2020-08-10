@@ -1,5 +1,5 @@
 // Linkedlist: the only advantage of linkedlist is that the insertion and deletion
-// operation have the time complexity of big O(n) -- better than arrays --
+// operation at the beginning have the time complexity of big O(1) -- better than arrays --
 
 class Node {
   constructor(val) {
@@ -117,10 +117,6 @@ class LinkdedList {
       prevCurr.next = nextCurr;
       this.length--;
     }
-  }
-
-  reverse() {
-    //reverse the linked list at place
   }
 
   travers() {
