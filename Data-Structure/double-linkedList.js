@@ -1,3 +1,6 @@
+//double liked list are same as singly linked list, the defference is only that dll has two pointers
+//rather than one for the sigly linked list
+
 class Node2 {
   constructor(val) {
     this.val = val;
@@ -72,6 +75,8 @@ class DoubleLinkedList {
     }
     this.length++;
   }
+
+  //and there still aslo other methods like set, get, insert...
 }
 
 const dll = new DoubleLinkedList();
