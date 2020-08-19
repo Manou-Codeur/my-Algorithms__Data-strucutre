@@ -86,4 +86,26 @@ tree.DFPostOrder = () => {
   console.log(data);
 };
 
-tree.DFPostOrder();
+//Depth first inOrder; travsere from side bottom till the root then
+//from the root to the bottom of the other side
+/*
+
+      10
+  6       15
+3   8      20 
+
+[3, 6, 8, 10, 15, 20]
+
+*/
+tree.DFInOrder = () => {
+  let data = [];
+
+  function travers(node) {
+    if (node.left) travers(node.left);
+    data.push(node.value);
+    if (node.right) travers(node.right);
+  }
+  travers(tree.root);
+
+  console.log(data);
+};
