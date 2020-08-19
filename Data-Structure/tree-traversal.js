@@ -1,4 +1,9 @@
-//breadth first search; searching horizontaly or by level
+import { Queue } from "./queue.js";
+import { BST } from "./binary-search-tree.js";
+
+const tree = new BST();
+
+//breadth first search; traverse horizontaly or by level
 /*
 
       10
@@ -8,11 +13,6 @@
 [10, 6, 15, 3, 8, 20]
 
 */
-import { Queue } from "./queue.js";
-import { BST } from "./binary-search-tree.js";
-
-const tree = new BST();
-
 tree.BFS = () => {
   let node = tree.root,
     data = [],
@@ -36,9 +36,7 @@ tree.insert(3);
 tree.insert(8);
 tree.insert(20);
 
-// tree.BFS();
-
-//Depth first preOreder; search vertically from the top to the bottom
+//Depth first preOreder; traverse vertically from the top to the bottom
 /*
 
       10
@@ -48,8 +46,7 @@ tree.insert(20);
 [10, 6, 3 ,8 ,15 ,20]
 
 */
-
-tree.DPP = () => {
+tree.DFPreOrder = () => {
   let data = [];
 
   function travers(node) {
@@ -60,7 +57,33 @@ tree.DPP = () => {
   }
   travers(tree.root);
 
+  return data;
+};
+
+//Depth first postOrder; traverse vertically but from the bottom to
+//the top, so we need to visit first all the nodes at the bottom then
+//go up to the parents until reaching the root
+/*
+
+      10
+  6       15
+3   8      20 
+
+[3, 8, 6, 20, 15, 10]
+
+*/
+tree.DFPostOrder = () => {
+  let data = [];
+
+  function travers(node) {
+    if (node.left) travers(node.left);
+    if (node.right) travers(node.right);
+
+    data.push(node.value);
+  }
+  travers(tree.root);
+
   console.log(data);
 };
 
-// tree.DPP();
+tree.DFPostOrder();
