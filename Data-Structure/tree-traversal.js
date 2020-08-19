@@ -36,4 +36,31 @@ tree.insert(3);
 tree.insert(8);
 tree.insert(20);
 
-tree.BFS();
+// tree.BFS();
+
+//Depth first preOreder; search vertically from the top to the bottom
+/*
+
+      10
+  6       15
+3   8      20 
+
+[10, 6, 3 ,8 ,15 ,20]
+
+*/
+
+tree.DPP = () => {
+  let data = [];
+
+  function travers(node) {
+    data.push(node.value);
+
+    if (node.left) travers(node.left);
+    if (node.right) travers(node.right);
+  }
+  travers(tree.root);
+
+  console.log(data);
+};
+
+// tree.DPP();
