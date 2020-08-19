@@ -8,9 +8,9 @@ class Node {
   }
 }
 
-class Queue {
+export class Queue {
   constructor() {
-    (this.head = null), (this.tail = null), (this.length = null);
+    (this.head = null), (this.tail = null), (this.length = 0);
   }
 
   enqueue(val) {
@@ -29,17 +29,19 @@ class Queue {
     if (!this.head) return undefined;
 
     const newHead = this.head.next;
+    const oldHead = this.head;
     this.head = newHead;
     this.length--;
     if (this.length === 0) {
       this.tail = null;
     }
+    return oldHead;
   }
 }
 
-const pizzaChain = new Queue();
+// const pizzaChain = new Queue();
 
-pizzaChain.enqueue("salim-pizza tomate");
-pizzaChain.enqueue("said-pizza thon");
-pizzaChain.enqueue("karim-pizza viand");
-pizzaChain.enqueue("morad-pizza poulet");
+// pizzaChain.enqueue("salim-pizza tomate");
+// pizzaChain.enqueue("said-pizza thon");
+// pizzaChain.enqueue("karim-pizza viand");
+// pizzaChain.enqueue("morad-pizza poulet");
