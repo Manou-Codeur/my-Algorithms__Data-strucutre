@@ -109,3 +109,7 @@ tree.DFInOrder = () => {
 
   console.log(data);
 };
+
+//NOTE:
+//If you have a tree with a big height(levels), use beadth first search
+//If you habe a tree wirh a big width(nodes at the same level), use depth first search
