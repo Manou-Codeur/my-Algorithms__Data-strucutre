@@ -52,14 +52,70 @@ class Graph {
     }
     delete this.adjacencyList[vertex];
   }
+
+  render() {
+    console.log(this.adjacencyList);
+  }
+
+  DFS(vertex) {
+    let finalArr = [];
+    let visitedVertexes = {};
+
+    const inner = start => {
+      if (this.adjacencyList[start].length === 0) {
+        finalArr.push(start);
+        return undefined;
+      }
+      finalArr.push(start);
+      visitedVertexes[start] = true;
+
+      for (let els of this.adjacencyList[start]) {
+        if (!visitedVertexes[els]) {
+          inner(els);
+        }
+      }
+    };
+    inner(vertex);
+    console.log(finalArr);
+  }
+
+  //visit neighboor first before going down
+  BFS(start) {
+    const queue = [start];
+    const result = [];
+    const visited = {};
+    let currentVertex;
+    visited[start] = true;
+
+    while (queue.length) {
+      currentVertex = queue.shift();
+      result.push(currentVertex);
+
+      this.adjacencyList[currentVertex].forEach(neighbor => {
+        if (!visited[neighbor]) {
+          visited[neighbor] = true;
+          queue.push(neighbor);
+        }
+      });
+    }
+    console.log(result);
+  }
 }
 
 const facebook = new Graph();
-facebook.addVertex("manou");
-facebook.addVertex("said");
-facebook.addVertex("kamel");
+facebook.addVertex("A");
+facebook.addVertex("B");
+facebook.addVertex("C");
+facebook.addVertex("D");
+facebook.addVertex("E");
+facebook.addVertex("F");
 
-facebook.addEdge("manou", "kamel");
-facebook.addEdge("manou", "said");
+facebook.addEdge("A", "B");
+facebook.addEdge("A", "C");
+facebook.addEdge("B", "D");
+facebook.addEdge("C", "E");
+facebook.addEdge("D", "E");
+facebook.addEdge("D", "F");
+facebook.addEdge("E", "F");
 
-facebook.removeVertex("kamel");
+facebook.BFS("A");
