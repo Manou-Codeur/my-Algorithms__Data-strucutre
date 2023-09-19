@@ -1,4 +1,4 @@
-//There is two ways to solve the collision problem, separarate chaining (include the items that have the
+//There is two ways to solve the collision problem, separarate chaining (include the items that has the
 // same index inside the same array which takes that common index), or linear probing(if the index is token
 // try the next one)
 

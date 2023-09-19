@@ -5,7 +5,7 @@
 // 2- Undirected: the edge goes in both dirrections A <--> B
 // 3- Weighted: the edge has some specification that are represented in numbers for example
 // 4- Unweighted: the edge has no specification
-// uses of graphs; maps, socila networking
+// uses of graphs; maps(like google map), social networking
 
 /*
 

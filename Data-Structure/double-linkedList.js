@@ -1,5 +1,6 @@
 //double liked list are same as singly linked list, the defference is only that dll has two pointers
 //rather than one for the sigly linked list
+//so also the deletion and the insertion at the end is big O(1)
 
 class Node2 {
   constructor(val) {
